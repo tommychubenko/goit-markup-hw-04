@@ -5,6 +5,7 @@
   --secondary-text-color: #757575;
   --accent-text-color: #2196f3;
   --background-color-number-two: #2f303a;
+  --icon-color-one: #afb1b8;
 }
 
 body {
@@ -39,12 +40,16 @@ ul {
 .footer-adress,
 .selector-list,
 .work-sectors,
-.images-samples .list {
+.images-samples .list,
+.benefits .list,
+.social-media-list,
+.permanent-partners-list,
+.footer-social-network-list {
   list-style-type: none;
 }
 
 .container {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -54,11 +59,15 @@ ul {
   padding-bottom: 94px;
 }
 
+.flex {
+  display: flex;
+}
+
 /* Лого, Нав и Хедер */
 
 /* ЛОГО */
 
-.header {
+.site-header {
   border-bottom: 1px solid #ececec;
 }
 .navigation {
@@ -140,10 +149,15 @@ ul {
   display: flex;
   margin-left: auto;
   /* background-color: darkorchid; */
+  align-items: center;
 }
 
-.header-contacts .item:not(:first-child) {
+.header-contacts .item:nth-child(2) {
   margin-left: 50px;
+}
+
+.header-contacts-icon {
+  margin-right: 10px;
 }
 
 .header-contacts .link {
@@ -157,9 +171,15 @@ ul {
   display: block;
 }
 
+.header-contacts .item {
+  display: flex;
+  align-items: center;
+}
+
 .header-contacts .link:hover,
 .header-contacts .link:focus {
   color: var(--accent-text-color);
+  fill: var(--accent-text-color);
 }
 
 /* БОДІ */
@@ -169,9 +189,20 @@ ul {
 .hero {
   background-color: var(--background-color-number-two);
   width: 100%;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("/images/index/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  max-width: 1600px;
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+}
+
+.hero .container {
 }
 
 .hero .title {
@@ -196,33 +227,45 @@ ul {
   padding: 10px 32px;
 }
 
-/* Наші переваги */
+/* Бенефиты */
 
-.unique-list {
+.benefits .list {
   display: flex;
 }
 
-.unique-list .item {
-  width: calc((100%-90px) / 4);
-  margin-right: 30px;
+.benefits .item {
+  display: block;
+  /* background-color: teal; */
 }
 
-.unique-list .item:last-child {
-  margin-right: 0;
+.benefits .item:not(:first-child) {
+  margin-left: 30px;
 }
 
-.unique-list .title {
+.benefits-icon-area {
+  background-color: #f5f4fa;
+  margin-bottom: 30px;
+}
+
+.benefits-icon {
+  width: 70px;
+  height: 70px;
+  margin: 25px 100px;
+}
+
+.benefits .title {
+  font-size: 14px;
   font-weight: 700;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  line-height: 1.17;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
-.unique-list .text {
+.benefits .text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2;
   color: var(--secondary-text-color);
-  line-height: 1.71;
-  letter-spacing: 0.03em;
 }
 
 .images-samples {
@@ -305,19 +348,104 @@ ul {
 
 .padding-30 {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 16px;
+}
+
+.social-media-list {
+  display: flex;
+  /* max-width: 206px; */
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  /* background-color: #2196f3; */
+}
+
+.social-media-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 44px;
+  /* background-color: #2196f3; */
+}
+
+.social-media-icon {
+  fill: var(--icon-color-one);
+}
+
+.social-media-link:hover,
+.social-media-link:focus {
+  background-color: var(--accent-text-color);
+  border-radius: 50%;
+}
+
+.social-media-link:hover .social-media-icon,
+.social-media-link:focus .social-media-icon {
+  fill: #ffffff;
+}
+
+/* Постоянные клиенты */
+
+.permanent-partners-list-header {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.17;
+  margin-bottom: 50px;
+}
+
+.permanent-partners-list {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #2196f3; */
+}
+
+.permanent-partners-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 92px;
+  width: 170px;
+  border: var(--icon-color-one) 1px solid;
+  border-radius: 4px;
+}
+
+.permanent-partners-icon {
+  fill: var(--icon-color-one);
+}
+
+.permanent-partners-link:hover,
+.permanent-partners-link:focus {
+  border: var(--accent-text-color) 1px solid;
+}
+
+.permanent-partners-link:hover .permanent-partners-icon,
+.permanent-partners-link:focus .permanent-partners-icon {
+  fill: var(--accent-text-color);
+}
+
+/* ---------------------------------------------------------------- */
+
+/* ФУТЕР */
+
+.adress {
+  font-style: normal;
 }
 
 .footer {
   background-color: var(--background-color-number-two);
-  padding-top: 60px;
-  padding-bottom: 60px;
 }
 
 .logo-footer {
   display: block;
   margin-bottom: 20px;
   padding: 0;
+}
+
+.footer-adress {
+  margin-right: 70px;
+  margin-top: 60px;
 }
 
 .footer-adress .item {
@@ -342,6 +470,53 @@ ul {
 
 .opacity-60 {
   opacity: 0.6;
+}
+
+.footer-social-network-block {
+  display: inline-block;
+  margin-top: 70px;
+}
+
+.footer-social-network-title {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.17;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 0.03em;
+}
+
+.footer-social-network-list {
+  display: flex;
+  /* background-color: #2196f3; */
+  /* justify-content: space-between; */
+}
+
+.footer-social-network-item {
+}
+
+.footer-social-network-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.footer-social-network-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer-social-network-link:hover,
+.footer-social-network-link:focus {
+  background-color: var(--accent-text-color);
+}
+
+.footer-social-network-icon {
+  fill: #ffffff;
 }
 
 /* ПОРТФОЛІО */
@@ -375,8 +550,7 @@ ul {
   padding: 6px 22px;
 
   background-color: #f5f4fa;
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
+
   border-radius: 4px;
 }
 
@@ -384,6 +558,8 @@ ul {
 .selector-list .button:focus {
   color: #ffffff;
   background-color: var(--accent-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .work-sectors {
@@ -401,6 +577,12 @@ ul {
 
 .work-sectors .item:nth-child(n + 7) {
   margin-bottom: 0;
+}
+
+.work-sectors .item:hover,
+.work-sectors .item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .work-sectors .link {
