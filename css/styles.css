@@ -166,7 +166,7 @@ ul {
 }
 
 .header-contacts .link {
-  color: var(--primary-text-color);
+  color: var(--secondary-text-color);
   font-weight: 500;
   text-decoration: none;
   line-height: 1.14;
@@ -250,12 +250,16 @@ ul {
 .benefits-icon-area {
   background-color: #f5f4fa;
   margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
 }
 
 .benefits-icon {
   width: 70px;
   height: 70px;
-  margin: 25px 100px;
 }
 
 .benefits .title {
@@ -467,12 +471,8 @@ ul {
   padding: 0;
 }
 
-.footer-adress .item {
+.adress-list .item:not(:last-child) {
   margin-bottom: 9px;
-}
-
-.footer-adress .item:last-child {
-  margin-bottom: 0;
 }
 
 .footer-adress .link {
@@ -493,7 +493,6 @@ ul {
 
 .footer-social-network-block {
   display: inline-block;
-  margin-bottom: 20px;
 }
 
 .footer-social-network-title {
