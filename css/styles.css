@@ -44,7 +44,8 @@ ul {
 .benefits .list,
 .social-media-list,
 .permanent-partners-list,
-.footer-social-network-list {
+.footer-social-network-list,
+.adress-list {
   list-style-type: none;
 }
 
@@ -61,6 +62,10 @@ ul {
 
 .flex {
   display: flex;
+}
+
+.block {
+  display: block;
 }
 
 /* Лого, Нав и Хедер */
@@ -433,19 +438,33 @@ ul {
   font-style: normal;
 }
 
+.adress .link {
+  display: block;
+  /* font-style: normal; */
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1.71;
+}
+
 .footer {
   background-color: var(--background-color-number-two);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.footer-block {
+  display: flex;
+  align-items: center;
+}
+
+.footer-block-1 {
+  margin-right: 70px;
 }
 
 .logo-footer {
   display: block;
   margin-bottom: 20px;
   padding: 0;
-}
-
-.footer-adress {
-  margin-right: 70px;
-  margin-top: 60px;
 }
 
 .footer-adress .item {
@@ -474,7 +493,7 @@ ul {
 
 .footer-social-network-block {
   display: inline-block;
-  margin-top: 70px;
+  margin-bottom: 20px;
 }
 
 .footer-social-network-title {
@@ -579,8 +598,8 @@ ul {
   margin-bottom: 0;
 }
 
-.work-sectors .item:hover,
-.work-sectors .item:focus {
+.work-sectors .link:hover,
+.work-sectors .link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
